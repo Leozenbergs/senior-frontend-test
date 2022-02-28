@@ -22,7 +22,8 @@
           'shadow-2xl',
           'shadow-inner',
           'shadow-black',
-          'animate-fade',
+          'overflow-hidden',
+          'animate-fadeIn',
           expanded ? ['transition-all', 'duration-1000', 'ease-in-out'] : '']
         "
       />        

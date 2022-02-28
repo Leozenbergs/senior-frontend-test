@@ -32,7 +32,10 @@ export default {
 	],
 
 	fontawesome: {
+		component: 'fa',
+		prefix: true,
 		icons: {
+			regular: true,
 			solid: true,
 			brands: true
 		}
