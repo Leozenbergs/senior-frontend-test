@@ -32,9 +32,9 @@
 </template>
 
 <script>
-  import Card from './Card'
-  import OfficeCardHeader from '../OfficeCardHeader'
-  import OfficeCardContent from '../OfficeCardContent.vue'
+  import Card from '@/components/cards/Card'
+  import OfficeCardHeader from './OfficeCardHeader'
+  import OfficeCardContent from './OfficeCardContent.vue'
 
 export default {
   components: {
