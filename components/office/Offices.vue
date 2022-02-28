@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import OfficeCard from "./cards/OfficeCard"
+import OfficeCard from "./OfficeCard"
 
 export default {
   components: {

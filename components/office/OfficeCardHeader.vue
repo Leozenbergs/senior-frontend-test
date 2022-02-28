@@ -14,7 +14,7 @@
       <div :class="[!!color ? color.address : 'text-gray', 'text-base']">{{ office.address }}</div>
     </div>
     <span class="icon is-right cursor-pointer">
-      <fa v-if="!expanded" :icon="['fas', 'chevron-down']" class="text-primary" @click="$emit('expand')" />
+      <fa v-if="!expanded" :icon="['fas', 'chevron-down']" class="text-primary" @click="$nuxt.$emit('showAlert')" />
       <fa v-else :icon="['fas', 'chevron-up']" class="text-white" @click="$emit('close')" />
     </span>
   </div>
