@@ -1,13 +1,16 @@
 <template>
   <div>
-    <template v-for="">
-
-    </template>
+    <office-card v-for="office in offices" :key="office.id" :office="office" />
   </div>
 </template>
 
 <script>
+import OfficeCard from "./cards/OfficeCard"
+
 export default {
+  components: {
+    OfficeCard
+  },
   data() {
     return {
       offices: [

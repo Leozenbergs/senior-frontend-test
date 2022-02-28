@@ -6,6 +6,7 @@ module.exports = {
   purge: [],
   theme: {
     screens: {
+      xs: '240px',
       sm: '480px',
       md: '768px',
       lg: '976px',
@@ -17,16 +18,18 @@ module.exports = {
       'light-grey': '#d1d4d8', // used for descriptions or lead text
       'blue': '#1fb6ff',
       'purple': '#7e5bef',
+      'danger': '#ff7b91',
       'pink': '#ff49db',
       'orange': '#ff7849',
       'green': '#13ce66',
       'yellow': '#ffc82c',
       'gray-dark': '#273444',
-      'gray': '#8492a6',
+      'gray': '#989ea7',
       'gray-light': '#d3dce6',
       'background': '#e8edf3',
       'black': '#000',
-      'white': '#fff'
+      'white': '#fff',
+      'transparent': 'transparent'
     },
     fontSize: {
       'tiny': '.875rem',
@@ -44,7 +47,20 @@ module.exports = {
       sans: ['Open Sans', 'Roboto', 'Helvetica'],
       serif: ['Merriweather', 'serif'],
     },
-    extend: {},
+    extend: {
+      // that is animation class
+      animation: {
+        fade: 'fade .4s ease-in-out',
+      },
+
+      // that is actual animation
+      keyframes: theme => ({
+        fade: {
+          '0%': { height: '0px' },
+          '100%': { height: '350px' },
+        },
+      }),
+    },
   },
   variants: {},
   plugins: [],
