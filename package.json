@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-regular-svg-icons": "^6.0.0",
     "@nuxt/core": "^2.15.8",
     "@nuxtjs/tailwindcss": "^5.0.0-4",
     "nuxt": "^2.14.6",

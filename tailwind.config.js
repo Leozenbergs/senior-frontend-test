@@ -32,6 +32,7 @@ module.exports = {
       'transparent': 'transparent'
     },
     fontSize: {
+      'xs': '.75rem',
       'tiny': '.875rem',
       'base': '1rem',
       'lg': '1.125rem',
@@ -50,15 +51,21 @@ module.exports = {
     extend: {
       // that is animation class
       animation: {
-        fade: 'fade .4s ease-in-out',
+        fadeIn: 'fadeIn .4s ease-in-out'
       },
 
       // that is actual animation
       keyframes: theme => ({
-        fade: {
-          '0%': { height: '0px' },
-          '100%': { height: '350px' },
-        },
+        fadeIn: {
+          '0%': {
+            height: '0px',
+            color: '#fff'
+          },
+          '100%': {
+            height: '253px',
+            color: '#313e4f'
+          },
+        }
       }),
     },
   },

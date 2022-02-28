@@ -1,25 +1,26 @@
 <template>
-  <div class="divide-y">
-    <div>
-      <h2 class="text-title text-xl"><strong>{{ office.name }}</strong></h2>
-      <p>{{ office.jobPosition }}</p>
-      <a href="" class="text-blue">{{ office.email }}</a>
-      <p>{{ office.phone }}</p>
-    </div>
-    <div class="flex justify-between items-center">
-      <div class="icon is-left">
-        <font-awesome-icon :icon="['fas', 'pencil']" />
-      </div>
-      <div class="icon is-right">
-        <font-awesome-icon :icon="['fas', 'trash-can']" class="text-danger" />
-      </div>
+  <div class="divide-y divide-gray">
+    <office-details :office="office" />
+    <div class="flex justify-between items-center p-3 pb-0">
+      <button class="icon is-left p-2">
+        <fa :icon="['fas', 'pencil']" class="text-gray"/>
+        <span class="uppercase text-xs text-gray">Edit</span>
+      </button>
+      <button class="icon is-right p-2">
+        <fa :icon="['fas', 'trash-can']" class="text-danger" />
+        <span class="uppercase text-danger text-xs">Delete</span>
+      </button>
     </div>
   </div>
 </template>
 
 <script>
+import OfficeDetails from './OfficeDetails.vue'
 
 export default {
+  components: {
+    OfficeDetails
+  },
   props: {
     office: {
       type: Object,
