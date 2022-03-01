@@ -6,7 +6,7 @@
         <fa :icon="['fas', 'pencil']" class="text-gray"/>
         <span class="uppercase text-xs text-gray">Edit</span>
       </button>
-      <button class="icon is-right p-2">
+      <button class="icon is-right p-2" @click="$nuxt.$emit('removeOffice', office.id)">
         <fa :icon="['fas', 'trash-can']" class="text-danger" />
         <span class="uppercase text-danger text-xs">Delete</span>
       </button>

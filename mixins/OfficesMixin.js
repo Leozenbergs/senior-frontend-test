@@ -51,11 +51,13 @@ export default {
     this.$nuxt.$on('edit', this.showForm)
     this.$nuxt.$on('closeForm', this.closeForm)
     this.$nuxt.$on('editOffice', this.editOffice)
+    this.$nuxt.$on('removeOffice', this.removeOffice)
   },
   beforeDestroy(){
     this.$nuxt.$off('edit')
     this.$nuxt.$off('closeForm')
     this.$nuxt.$off('editOffice')
+    this.$nuxt.$off('removeOffice')
   },
   computed: {
     officesData() {
@@ -76,6 +78,13 @@ export default {
       let index = this.offices.indexOf(officeToUpdate)
       this.offices[index] = office
       this.$nuxt.$emit('closeForm', office.id)
+      this.$nuxt.$emit('showAlert')
+      this.$forceUpdate()
+    },
+    removeOffice(officeId) {
+      let office = this.offices.find(item => item.id === officeId)
+      let index = this.offices.indexOf(office)
+      this.offices.splice(index, 1)
       this.$nuxt.$emit('showAlert')
       this.$forceUpdate()
     }
