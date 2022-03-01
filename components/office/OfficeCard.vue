@@ -2,6 +2,7 @@
   <card :backgroundColor="backgroundColor">
     <template v-slot:header>
       <office-card-header
+        :edit="office.edit"
         :office="office"
         :expanded="expanded"
         @expand="expand()"
@@ -10,7 +11,7 @@
     </template>
     <template v-slot:content>
       <office-card-content
-        v-show="expanded" 
+        v-show="expanded && !office.edit" 
         :office="office"
         :class="[
           'relative',
@@ -28,13 +29,16 @@
         "
       />        
     </template>
+    <template v-slot:editable>
+      <slot name="editable" />
+    </template>
   </card>
 </template>
 
 <script>
   import Card from '@/components/cards/Card'
   import OfficeCardHeader from './OfficeCardHeader'
-  import OfficeCardContent from './OfficeCardContent.vue'
+  import OfficeCardContent from './OfficeCardContent'
 
 export default {
   components: {

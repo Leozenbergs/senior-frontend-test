@@ -1,5 +1,5 @@
 <template>
-  <div role="alert" class="w-full bg-white text-center p-8  absolute top-0 left-0 text-xs">
+  <div role="alert" class="w-full bg-white text-center p-8 fixed top-0 left-0 text-xs">
     <span>
       <span class="icon is-left">
         <fa :icon="['fas', 'check']" class="text-primary" />
