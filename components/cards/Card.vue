@@ -6,6 +6,9 @@
     <div>
       <slot name="content"/>
     </div>
+    <div>
+      <slot name="editable" />
+    </div>
   </div>
 </template>
 

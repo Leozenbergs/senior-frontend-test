@@ -2,7 +2,7 @@
   <div class="divide-y divide-gray">
     <office-details :office="office" />
     <div class="flex justify-between items-center p-3 pb-0">
-      <button class="icon is-left p-2">
+      <button class="icon is-left p-2" @click="$nuxt.$emit('edit', office.id)">
         <fa :icon="['fas', 'pencil']" class="text-gray"/>
         <span class="uppercase text-xs text-gray">Edit</span>
       </button>
