@@ -44,7 +44,7 @@
       label="Phone"
     />
     <div class="w-full flex justify-start items-center">
-      <button class="bg-gray-light text-white py-2 px-4 rounded-lg" @click.prevent="$nuxt.$emit('editOffice', details)">
+      <button class="bg-gray text-white py-2 px-4 rounded-lg" @click.prevent="handleFormSubmit">
         Save
       </button>
     </div>
@@ -85,6 +85,18 @@ export default {
         email: this.office.email,
         phone: this.office.phone,
       }
+    }
+  },
+  computed: {
+    creationForm() {
+      return this.office ? this.office.id === null : false
+    }
+  } ,
+  methods: {
+    handleFormSubmit () {
+      this.$emit('send')
+      if(this.creationForm) return this.$nuxt.$emit('createNewOffice', this.details)
+      return this.$nuxt.$emit('editOffice', this.details)
     }
   }
 }
