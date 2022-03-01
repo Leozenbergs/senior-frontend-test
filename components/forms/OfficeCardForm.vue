@@ -43,8 +43,17 @@
       placeholder="Phone"
       label="Phone"
     />
-    <div class="w-full flex justify-start items-center">
-      <button class="bg-gray text-white py-2 px-4 rounded-lg" @click.prevent="handleFormSubmit">
+    <div :class="['w-full', 'flex', 'justify-start', 'items-center', `${ disabled ? 'opacity-50' : '' }`]">
+      <button
+        class="
+          bg-gray
+          text-white
+          py-2
+          px-4
+          rounded-lg"
+        :disabled="disabled"
+        @click.prevent="handleFormSubmit"
+      >
         Save
       </button>
     </div>
@@ -52,6 +61,7 @@
 </template>
 
 <script>
+import { omit } from 'lodash'
 import Divider from '@/components/divider/divider'
 import OfficeCardFormInput from '@/components/forms/OfficeCardFormInput'
 
@@ -90,6 +100,10 @@ export default {
   computed: {
     creationForm() {
       return this.office ? this.office.id === null : false
+    },
+    disabled() {
+      let form = omit(this.details, ['id'])
+      return Object.values(form).some(item => (item === null || item === ''));
     }
   } ,
   methods: {
